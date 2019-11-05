@@ -118,7 +118,7 @@ public class FeatureTest {
     @PostAction
     public void postTest() {}
 
-    @GetAction
+    @GetAction({"/home", "/"})
     @CacheFor(5)
     public void home(@DefaultValue("world") @Output String who, H.Response response) {
         response.contentType(H.Format.HTML.contentType());
